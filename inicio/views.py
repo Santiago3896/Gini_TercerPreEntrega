@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 # from django.template import loader
 # from django.http import HttpResponse
 from inicio.models import Paleta, Cancha, Pelotitas
@@ -25,6 +25,11 @@ def inicio(request):
     
 #     return render(request, "inicio/paletas.html", {'paleta': paleta})
 
+def alquiler_exitoso(request):
+    
+    print("paso por aca")
+    return render(request,"inicio/alquiler_exitoso.html")
+
 def alquilar_paletas(request):
     
     if request.method == "POST":
@@ -39,6 +44,11 @@ def alquilar_paletas(request):
             
             paleta = Paleta(marca = marca , modelo = modelo , descripcion = descripcion , anio = anio)
             paleta.save()
+            
+            return redirect(alquiler_exitoso)
+        
+        else:
+            return render(request, "inicio/alquiler_paleta.html",{"formulario": formulario})
     
     formulario = AlquilarPaletaFormulario()
     return render(request, "inicio/alquiler_paleta.html",{"formulario" : formulario})
@@ -57,6 +67,11 @@ def alquilar_canchas(request):
             
             canchas = Cancha(numero = numero , deporte = deporte , tipo_piso = tipo_piso , cantidad_horas = cantidad_horas)
             canchas.save()
+            
+            return redirect(alquiler_exitoso)
+        
+        else:
+            return render(request, "inicio/alquiler_cancha.html",{"formulario": formulario})
        
     
     formulario1 = AlquilarCanchaFormulario()
@@ -76,6 +91,11 @@ def alquilar_pelotitas(request):
             
             pelotitas = Pelotitas(marca = marca , deporte = deporte , cantidad = cantidad)
             pelotitas.save()
+            
+            return redirect(alquiler_exitoso)
+        
+        else:
+            return render(request, "inicio/alquiler_pelotitas.html",{"formulario": formulario})
     
     formulario2 = AlquilarPelotitasFormulario()
     
