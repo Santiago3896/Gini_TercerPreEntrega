@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title_header %} 
+<title>ALQUILADO</title>
+{% endblock title_header %}
+{% block h1_header %}
+LO ALQUILADO
+{% endblock h1_header %}
+{% block main %}
+ <ul>
+
+     {% for paleta in listado_de_paletas %}
+    <li>{{paleta}}</li> 
+     {% endfor %} 
+
+ </ul>   
+{% endblock main %}
+

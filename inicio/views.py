@@ -18,12 +18,13 @@ def inicio(request):
     
     return render(request,"inicio/inicio.html", {})
 
-# def paletas(request):
-#     paleta = Paleta(marca = "Babolat", modelo = "f12" , descripcion = "Paleta de primera marca", anio = 2023)
-#     paleta.save()
+def paletas(request):
     
+    listado_de_paletas = Paleta.objects.all()
     
-#     return render(request, "inicio/paletas.html", {'paleta': paleta})
+    print(listado_de_paletas)
+    
+    return render(request, "inicio/estudiando_al_cliente.html", {'listado_de_paletas': listado_de_paletas})
 
 def alquiler_exitoso(request):
     

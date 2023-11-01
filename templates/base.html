@@ -26,6 +26,7 @@
                 <a class="btn btn-primary" href= {% url "alquiler_paleta" %} >Paletas</a>
                 <a class="btn btn-primary" href= {% url "alquilar_canchas" %} >Canchas</a>
                 <a class="btn btn-primary" href= {% url "alquilar_pelotitas" %} >Pelotitas</a>
+                <a class="btn btn-primary" href= {% url "estudiando" %} >ALQUILADO</a>
 
                 {% comment %} <a class="btn btn-primary" href= {% url "paletas/alquilar" %} >x</a>
                 <a class="btn btn-primary" href= {% url "canchas" %} >x2</a>
@@ -36,6 +37,7 @@
         <header class="masthead">
             <div class="container position-relative">
                 <div class="row justify-content-center">
+                   
                     <div class="col-xl-6">
                         <div class="text-center text-white">
                             <!-- Page heading-->
@@ -46,9 +48,15 @@
                             </h1>
                         </div>
                     </div>
+                    
                 </div>
             </div>
         </header>
+        <div>
+            {% block main %}
+            {% endblock main %}
+
+        </div>
         <!-- Footer-->
         <footer class="footer bg-light">
             <div class="container">
