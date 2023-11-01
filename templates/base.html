@@ -23,7 +23,10 @@
         <nav class="navbar navbar-light bg-light static-top">
             <div class="container">
                 <a class="navbar-brand" href= {% url "inicio" %}>Inicio</a>
-                <a class="btn btn-primary" href= {% url "paletas" %} >Paletas</a>
+                <a class="btn btn-primary" href= {% url "alquiler_paleta" %} >Paletas</a>
+                <a class="btn btn-primary" href= {% url "alquilar_canchas" %} >Canchas</a>
+                <a class="btn btn-primary" href= {% url "alquilar_pelotitas" %} >Pelotitas</a>
+
                 {% comment %} <a class="btn btn-primary" href= {% url "paletas/alquilar" %} >x</a>
                 <a class="btn btn-primary" href= {% url "canchas" %} >x2</a>
                 <a class="btn btn-primary" href= {% url "pelotitas" %} >x3</a> {% endcomment %}
