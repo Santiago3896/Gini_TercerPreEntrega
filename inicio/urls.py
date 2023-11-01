@@ -1,5 +1,5 @@
 from django.urls import path
-from inicio.views import inicio , paletas, alquilar_paletas, alquilar_canchas, alquilar_pelotitas
+from inicio.views import inicio, alquilar_paletas, alquilar_canchas, alquilar_pelotitas
 
 urlpatterns = [
     path('', inicio, name = "inicio"),

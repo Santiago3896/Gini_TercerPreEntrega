@@ -18,12 +18,12 @@ def inicio(request):
     
     return render(request,"inicio/inicio.html", {})
 
-def paletas(request):
-    paleta = Paleta(marca = "Babolat", modelo = "f12" , descripcion = "Paleta de primera marca", anio = 2023)
-    paleta.save()
+# def paletas(request):
+#     paleta = Paleta(marca = "Babolat", modelo = "f12" , descripcion = "Paleta de primera marca", anio = 2023)
+#     paleta.save()
     
     
-    return render(request, "inicio/paletas.html", {'paleta': paleta})
+#     return render(request, "inicio/paletas.html", {'paleta': paleta})
 
 def alquilar_paletas(request):
     
