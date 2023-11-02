@@ -6,23 +6,18 @@ from inicio.forms import AlquilarPaletaFormulario , AlquilarCanchaFormulario , A
 
 
 def inicio(request):
-   
-    # v2
-    
-    # template = loader.get_template('inicio.html')
-    # template_renderizado = template.render({})
-    
-    # return HttpResponse(template_renderizado)
-    
-    # v3
     
     return render(request,"inicio/inicio.html", {})
 
 def paletas(request):
     
-    listado_de_paletas = Paleta.objects.all()
+    marca_buscar = request.GET.get('marca')
     
-    print(listado_de_paletas)
+    if marca_buscar:
+        listado_de_paletas = Paleta.objects.filter(marca = marca_buscar)
+    else:
+        listado_de_paletas = Paleta.objects.all()
+        
     
     return render(request, "inicio/estudiando_al_cliente.html", {'listado_de_paletas': listado_de_paletas})
 
