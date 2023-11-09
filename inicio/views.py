@@ -96,3 +96,8 @@ def alquilar_pelotitas(request):
     formulario2 = AlquilarPelotitasFormulario()
     
     return render(request, "inicio/alquiler_pelotitas.html",{"formulario" : formulario2})
+
+def eliminar(request, paleta_id):
+    paleta_a_eliminar = Paleta.objects.get(id=paleta_id)
+    paleta_a_eliminar.delete()
+    return redirect(paletas)
